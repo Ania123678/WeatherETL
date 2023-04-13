@@ -1,0 +1,122 @@
+body
+{
+    font-family: 'Lato', sans-serif;
+}
+
+html, body {
+    height:100%;
+    margin:0px;
+  }
+
+.container-fluid{
+    height:100%;
+}
+
+.colortext{
+  color:aliceblue;
+}
+
+.padding10weather{
+  padding-bottom: 30px;
+}
+
+.borders{
+  border:4px solid rgb(40, 108, 202);
+}
+
+.tile{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+  
+.gradient {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(3, 79, 185)), to(rgb(3, 38, 87, 0.5)));
+  }
+
+.gradient2 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(49, 109, 192)), to(rgb(3, 79, 185)));
+}
+
+
+#day2{
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+#day3{
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+#day4{
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+#day5{
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+#day6{
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+#day7{
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+#day8{
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+#day9{
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+#rain2{
+  margin-top: 20px;
+}
+
+#rain3{
+  margin-top: 20px;
+}
+
+#rain4{
+  margin-top: 20px;
+}
+
+#rain5{
+  margin-top: 20px;
+}
+
+#rain6{
+  margin-top: 20px;
+}
+
+#rain7{
+  margin-top: 20px;
+}
+
+#rain8{
+  margin-top: 20px;
+}
+
+#rain9{
+  margin-top: 20px;
+}
+
+

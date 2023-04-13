@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+
+    <body>
+        <div class="container-fluid gradient">
+
+            <div class="col colortext today_part1">
+                <div class = "city text-center" style="padding-top: 50px;"> Szczecin, Poland </div>
+                <div class = "today day text-center" style="padding-bottom: 20px; font-size: 50px;"> 
+                    <span id="date"></span>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" style="padding-bottom: 70px;">
+
+                <div class="col-md-2 align-self-right today_part2" style="padding-bottom: 20px;">
+                    <div class="text-center">
+                        <img src= "{{url_for('static', filename='' + image_weather_today)}}" style="width: 256px; height: 256px;;" />
+                    </div>
+
+                    <div class = "today weather colortext text-center" style="font-size: 20px;">  
+                        <span id="weather"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2 align-self-center today_part3" style="font-size: 100px;">
+                    <div class = "today temperature colortext text-center">  
+                        <span id="temperature"></span>
+                        <span>°</span>
+                     </div>
+                </div>    
+                
+                
+               <div class="col-md-2 align-self-center colortext today_part4">
+                    <div class = "today wind" style="font-size: 25px;"> 
+                        <span id="id4"> Wind: </span>
+                        <span id="wind"></span>
+                        <span>km/h</span>
+                    </div>
+
+                    <div class = "today humidity" style="font-size: 25px;"> 
+                        <span id="id5"> Humidity: </span>
+                        <span id="humidity"></span>
+                    </div>
+
+                    <div class = "today dewpoint" style="font-size: 25px;"> 
+                        <span id="id6"> Dewpoint: </span>
+                        <span id="dewpoint"></span>
+                        <span>°</span>
+                    </div>
+
+                    <div class = "today pressure" style="font-size: 25px;"> 
+                        <span id="id7"> Pressure: </span>
+                        <span id="pressure"></span>
+                        <span>hPa</span>
+                    </div>
+
+                    <div class = "today uv" style="font-size: 25px;">  
+                        <span id="id8"> UV: </span>
+                        <span id="uv"></span>
+                    </div>
+
+                    <div class = "today visibility" style="font-size: 25px;"> 
+                        <span id="id9"> Visibility: </span>
+                        <span id="visibility"></span>
+                    </div>
+
+                    <div class = "today moon" style="font-size: 25px;">  
+                        <span id="id10"> Moon phase: </span>
+                        <span id="moonphase"></span>
+                    </div>
+                
+               </div>
+            </div>
+
+            <div class="row another">
+                <div class="col borders gradient2 tile colortext text-center">
+                    <div class = "day2-weather text-center" style="font-size: 20px;"> 
+                        <p id="day2"></p>
+                        <img src= "{{url_for('static', filename='' + image_weather_day2)}}" style="width: 64px; height: 64px; margin-bottom: 20px;" />
+                        <p id="weather2"></p>
+                        <span id="max_temp2"></span>
+                        <span>°</span>
+                        <span>/</span>
+                        <span id="min_temp2"></span>
+                        <span>°</span>
+                        <p> </p>
+                        <span id="rain2"></span>
+                        <span>%</span>
+                        <p> </p>
+                        <span id="wind2"></span>
+                        <span>km/h</span>
+                    </div>
+                </div>
+
+                <div class="col borders gradient2 tile colortext text-center">
+                    <div class = "day3-weather" style="font-size: 20px;"> 
+                        <p id="day3"></p>
+                        <img src= "{{url_for('static', filename='' + image_weather_day3)}}" style="width: 64px; height: 64px; margin-bottom: 20px;" />
+                        <p id="weather3"></p>
+                        <span id="max_temp3"></span>
+                        <span>°</span>
+                        <span>/</span>
+                        <span id="min_temp3"></span>
+                        <span>°</span>
+                        <p> </p>
+                        <span id="rain3"></span>
+                        <span>%</span>
+                        <p> </p>
+                        <span id="wind3"></span>
+                        <span>km/h</span>
+                    </div>
+                </div>
+
+                <div class="col borders gradient2 tile colortext text-center">
+                    <div class = "day4-weather" style="font-size: 20px;"> 
+                        <p id="day4"></p>
+                        <img src= "{{url_for('static', filename='' + image_weather_day4)}}" style="width: 64px; height: 64px; margin-bottom: 20px;" />
+                        <p id="weather4"></p>
+                        <span id="max_temp4"></span>
+                        <span>°</span>
+                        <span>/</span>
+                        <span id="min_temp4"></span>
+                        <span>°</span>
+                        <p> </p>
+                        <span id="rain4"></span>
+                        <span>%</span>
+                        <p> </p>
+                        <span id="wind4"></span>
+                        <span>km/h</span>
+                    </div>
+                </div>
+
+                <div class="col borders gradient2 tile colortext text-center">
+                    <div class = "day5-weather" style="font-size: 20px;"> 
+                        <p id="day5"></p>
+                        <img src= "{{url_for('static', filename='' + image_weather_day5)}}" style="width: 64px; height: 64px; margin-bottom: 20px;" />
+                        <p id="weather5"></p>
+                        <span id="max_temp5"></span>
+                        <span>°</span>
+                        <span>/</span>
+                        <span id="min_temp5"></span>
+                        <span>°</span>
+                        <p> </p>
+                        <span id="rain5"></span>
+                        <span>%</span>
+                        <p> </p>
+                        <span id="wind5"></span>
+                        <span>km/h</span>
+                    </div>
+                </div>
+
+                <div class="col borders gradient2 tile colortext text-center">
+                    <div class = "day6-weather" style="font-size: 20px;"> 
+                        <p id="day6"></p>
+                        <img src= "{{url_for('static', filename='' + image_weather_day6)}}" style="width: 64px; height: 64px; margin-bottom: 20px;" />
+                        <p id="weather6"></p>
+                        <span id="max_temp6"></span>
+                        <span>°</span>
+                        <span>/</span>
+                        <span id="min_temp6"></span>
+                        <span>°</span>
+                        <p> </p>
+                        <span id="rain6"></span>
+                        <span>%</span>
+                        <p> </p>
+                        <span id="wind6"></span>
+                        <span>km/h</span>
+                    </div>
+                </div>
+
+                <div class="col borders gradient2 tile colortext text-center">
+                    <div class = "day7-weather" style="font-size: 20px;"> 
+                        <p id="day7"></p>
+                        <img src= "{{url_for('static', filename='' + image_weather_day7)}}" style="width: 64px; height: 64px; margin-bottom: 20px;" />
+                        <p id="weather7"></p>
+                        <span id="max_temp7"></span>
+                        <span>°</span>
+                        <span>/</span>
+                        <span id="min_temp7"></span>
+                        <span>°</span>
+                        <p> </p>
+                        <span id="rain7"></span>
+                        <span>%</span>
+                        <p> </p>
+                        <span id="wind7"></span>
+                        <span>km/h</span>
+                    </div>
+                </div>
+    
+                <div class="col borders gradient2 tile colortext text-center">
+                    <div class = "day8-weather" style="font-size: 20px;"> 
+                        <p id="day8"></p>
+                        <img src= "{{url_for('static', filename='' + image_weather_day8)}}" style="width: 64px; height: 64px; margin-bottom: 20px;" />
+                        <p id="weather8"></p>
+                        <span id="max_temp8"></span>
+                        <span>°</span>
+                        <span>/</span>
+                        <span id="min_temp8"></span>
+                        <span>°</span>
+                        <p> </p>
+                        <span id="rain8"></span>
+                        <span>%</span>
+                        <p> </p>
+                        <span id="wind8"></span>
+                        <span>km/h</span>
+                    </div>
+                </div>
+    
+                <div class="col borders gradient2 tile colortext text-center">
+                    <div class = "day9-weather" style="font-size: 20px;"> 
+                        <p id="day9"></p>
+                        <img src= "{{url_for('static', filename='' + image_weather_day9)}}" style="width: 64px; height: 64px; margin-bottom: 20px;" />
+                        <p id="weather9"></p>
+                        <span id="max_temp9"></span>
+                        <span>°</span>
+                        <span>/</span>
+                        <span id="min_temp9"></span>
+                        <span>°</span>
+                        <p> </p>
+                        <span id="rain9"></span>
+                        <span>%</span>
+                        <p> </p>
+                        <span id="wind9"></span>
+                        <span>km/h</span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script>
+            const tab = ["#date", "#temperature", "#weather", "#wind", "#humidity", "#dewpoint", "#pressure", "#uv", "#visibility", "#moonphase"]
+            function update(){
+                $.get("/update", function(data){ 
+                    for (let i = 0; i<10; i++){
+                        $(tab[i]).html(data[i])
+                    }
+                    
+                });
+            }
+            update()
+            var intervalId = setInterval(function() {update()}, 1000 * 60 * 60);
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script>
+            const tab2 = [["#day2", "#max_temp2", "#min_temp2", "#weather2", "#rain2", "#wind2"], 
+            ["#day3", "#max_temp3", "#min_temp3", "#weather3", "#rain3", "#wind3"],
+            ["#day4", "#max_temp4", "#min_temp4", "#weather4", "#rain4", "#wind4"],
+            ["#day5", "#max_temp5", "#min_temp5", "#weather5", "#rain5", "#wind5"],
+            ["#day6", "#max_temp6", "#min_temp6", "#weather6", "#rain6", "#wind6"],
+            ["#day7", "#max_temp7", "#min_temp7", "#weather7", "#rain7", "#wind7"],
+            ["#day8", "#max_temp8", "#min_temp8", "#weather8", "#rain8", "#wind8"],
+            ["#day9", "#max_temp9", "#min_temp9", "#weather9", "#rain9", "#wind9"]]
+
+            function update10(){
+                $.get("/update10", function(data){ 
+                    for (let j = 0; j<9; j++){
+                        for (let i = 0; i<9; i++){
+                            $(tab2[j][i]).html(data[j][i])
+                        }
+                    }
+                });
+            }
+            update10()
+            var intervalId = setInterval(function() {update10()}, 1000 * 60 * 60);
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    </body>
+
+</html>
