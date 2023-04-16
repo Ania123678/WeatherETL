@@ -1,7 +1,7 @@
 # ETL pipeline for weather app
 This repository contains:
 
-1. Scipts for webscraping weather information from website
+1. Scripts for webscraping weather information from website
 2. File for managing DAGs in Airflow
 3. Created webpage using Flask and Bootstrap
 
