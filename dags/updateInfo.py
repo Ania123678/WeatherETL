@@ -18,18 +18,10 @@ def updateWeather():
         weather_records = cursor.fetchall()
         print('id of row ' + str(weather_records[0][0]))
 
-        date_ = weather_records[0][1]
+        weather_records = [i for sub in weather_records for i in sub]
+        [id, date_, today_celcius, today_weather, wind_kmh, humidity, dewpoint_celcius, pressure_barometric, uv_index, visibilty, moon_phase] = [i for i in weather_records]
         date_ = date_.strftime('%d %B')
-        today_celcius = weather_records[0][2]
-        today_weather = weather_records[0][3]
-        wind_kmh = weather_records[0][4]
-        humidity = weather_records[0][5]
-        dewpoint_celcius = weather_records[0][6]
-        pressure_barometric = weather_records[0][7]
-        uv_index = weather_records[0][8]
-        visibilty = weather_records[0][9]
-        moon_phase = weather_records[0][10]
-
+ 
     except (Exception, psycopg2.Error) as error:
         print("Error while fetching data from PostgreSQL", error)
 
