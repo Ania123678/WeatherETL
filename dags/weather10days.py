@@ -52,16 +52,9 @@ def weather_day_info(info_list):
 
 day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13, day14, day15 = weather_10days(soup)
 
-day2 = weather_day_info(day2)
-day3 = weather_day_info(day3)
-day4 = weather_day_info(day4)
-day5 = weather_day_info(day5)
-day6 = weather_day_info(day6)
-day7 = weather_day_info(day7)
-day8 = weather_day_info(day8)
-day9 = weather_day_info(day9)
+day2, day3, day4, day5 = weather_day_info(day2), weather_day_info(day3), weather_day_info(day4), weather_day_info(day5)
+day6, day7, day8, day9 = weather_day_info(day6), weather_day_info(day7), weather_day_info(day8), weather_day_info(day9)
 
-print(day2, day3, day4, day5, day6, day7, day8, day9)
 
 
 
