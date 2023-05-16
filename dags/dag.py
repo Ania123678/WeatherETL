@@ -16,6 +16,7 @@ default_args = {
 with DAG(
     default_args = default_args,
     dag_id = 'WeatherDAG',
+    description = 'weather dag',
     start_date = pendulum.yesterday(),
     schedule_interval='@hourly',
     catchup = False,
@@ -33,4 +34,9 @@ with DAG(
         python_callable=startETL
     )
 
-    createTable >> startETL
+    testETL = PythonOperator(
+        task_id='Test',
+        python_callable=test_postgres_hook
+    )
+
+    createTable >> testETL >> startETL
