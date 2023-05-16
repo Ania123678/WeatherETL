@@ -2,13 +2,10 @@ import pytest
 import bs4 as BeautifulSoup
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 
-# import sys, os
-
 from extract import extract_data
 from transform import transform_data
 from load import load_data
 
-# sys.path.append(os.path.dirname(sys.path[0]))
 
 from variables import URL_WEATHER, POSTGRES_CONN_ID, SCHEMA
 url = URL_WEATHER
