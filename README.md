@@ -11,6 +11,8 @@ The ETL pipeline enables the extraction, transformation, and loading of weather 
 - Webpage using Flask and Bootstrap:
 Built with Flask, a Python web framework, and Bootstrap for a clean interface. It displays the weather information retrieved from the web scraping module.
 
+- Test using pytest
+
 ## How to launch project:
 ### - Make requirements.txt file with this requirements:
 
