@@ -13,8 +13,9 @@ Built with Flask, a Python web framework, and Bootstrap for a clean interface. I
 
 - Test using pytest
 
+
 ## How to launch project:
-### - Make requirements.txt file with this requirements:
+### 1. Make requirements.txt file with this requirements:
 
 bs4==0.0.1
 
@@ -26,7 +27,7 @@ numpy==1.21.6
 
 pytest==7.3.1
 
-### - Create a Dockerfile:
+### 2. Create a Dockerfile:
 
 FROM apache/airflow:2.5.2
 
@@ -36,9 +37,9 @@ RUN pip install --user --upgrade pip
 
 RUN pip install --no-cache-dir --user -r /requirements.txt
 
-### - Define services in a Compose file
+### 3. Define services in a Compose file
 
-### - Build and run your app with Compose
+### 4. Build and run your app with Compose
 From your project directory, start up your application by running "docker compose up"
 
 
